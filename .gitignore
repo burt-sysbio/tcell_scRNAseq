@@ -1,6 +1,7 @@
 data/
 Data/
 output/
+reports/
 figures/
 .Rproj.user
 .RData
