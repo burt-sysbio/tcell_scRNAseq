@@ -25,10 +25,19 @@ tcells <- c("Memory CD4 T", "Naive CD4 T", "CD8 T")
 pbmc3k_tcells <- subset(pbmc3k, subset = seurat_annotations %in% tcells)
 
 
+
 # run SC transform and save output
 study <- "pbmc3k_10x"
-pbmc3k_tcells <- SCTransform(pbmc3k_tcells, vars.to.regress = "percent.mt", verbose = TRUE)
-df_sct <- pbmc3k_tcells[["SCT"]][[]]
+pbmc3k <- SCTransform(pbmc3k, vars.to.regress = "percent.mt", verbose = TRUE)
+sct_pbmc3k <- pbmc3k[["SCT"]][[]]
 
 savename <- paste0("variance_", study, "_seurat.csv")
-write.csv(df_sct, here("output", savename))
+write.csv(sct_pbmc3k, here("output", savename))
+
+# run SC transform and save output
+study <- "pbmc3k_10x_tcells"
+pbmc3k_tcells <- SCTransform(pbmc3k_tcells, vars.to.regress = "percent.mt", verbose = TRUE)
+sct_pbmc3k_cells <- pbmc3k_tcells[["SCT"]][[]]
+
+savename <- paste0("variance_", study, "_seurat.csv")
+write.csv(sct_pbmc3k_cells, here("output", savename))

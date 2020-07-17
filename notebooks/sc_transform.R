@@ -1,7 +1,6 @@
 require(Seurat)
 require(SeuratDisk)
 require(here)
-require(ggplot2)
 
 path <- here("output", "cleaned_datasets")
 
