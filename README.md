@@ -1,4 +1,4 @@
-# Single-cell RNAseq data analysis of T cell transcriptomes in mice and men
+# Single-cell RNAseq data analysis of T cell transcriptomes
 ## Description
 I here compare mouse and human T cell transcriptomes using published single-cell RNAseq data in the context of different diseases.
 The main question I want to adress is whether T cells are more or less heterogeneous in different conditions.
